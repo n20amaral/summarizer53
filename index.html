@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Summarizer #5 - Nuno Amaral</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- <link rel="stylesheet" href="summ5.css"> -->
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<header>
+					<h1>Summarizer #5</h1>
+					<h2 style="font-size:1em;">Nuno Amaral @ #19_Bootcamp</h2>
+				</header>
+                <br />
+				<p class="fragment fade-in">Follow me on your screen:
+					<a href="https://n20amaral.github.io/summarizer5">n20amaral.github.io/summarizer5</a>
+                </p>
+                <br />
+                <img style="border:0; box-shadow: 0 0 0" src="img/logoac.png" />
+				<aside class="notes">Good morning everyone follow me on your computers</aside>
+			</section>
+			<section>
+                <h3 style="color:red;">Bootcamp Day 5 Overview</h3>
+                <p class="fragment fade-in">Iterative vs Recursive Pseudocode</p>
+                <p class="fragment fade-in">Version Control Systems</p>
+                <p class="fragment fade-in">Git Hands On</p>
+                <aside class="notes">refer homeworks, summarizer, election, and lottery<br />Reference to ruben first lecture</aside>
+			</section>
+			<section>
+				<header>
+					<h3 style="color:red;">Iterative vs Recursive Pseudocode</h3>
+				</header>
+				<section>
+					<h4>isPalindrome() with Iterative Approach</h4>
+                    <img src="img/iterativepalindrome.jpg" />
+                    <aside class="notes">DONT FORGET TO GO DOWN<br />Explain this pseudocode</aside>
+				</section>
+				<section>
+                    <h4>isPalindrome() with Recursive Approach</h4>
+                    <img src="img/recursivepalindrome.jpg" />
+                    <aside class="notes">Explain this pseudocode</aside>
+				</section>
+			</section>
+			<section>
+				<header>
+					<h3 style="color:red;">Version Control Systems (VCS)</h3>
+				</header>
+				<section>
+					<h4 class="fragment fade-in">What is it?</h4>
+					<small class="fragment fade-in">It's a system that tracks file changes and manages collaborative work on a project.</small>
+					<hr style="visibility: hidden" />
+					<h4 class="fragment fade-in">Why should we use it?</h4>
+					<small class="fragment fade-in">With a VCS it's possible to rollback to a previous version of a file and it's easier to solve conflicts when 2 or more
+						people are working in the same document.</small>
+					<aside class="notes">Brevly explain what is a VCS.
+						<br/>
+                        <br /> How about no version control?
+                        <br />CLICK DOWN
+                    </aside>
+                        
+				</section>
+				<section>
+					<h4>No Version Control</h4>
+					<aside class="notes">How many of you lived a situation like this (next slide)</aside>
+				</section>
+				<section>
+					<img alt="no-version-control" src="img/noversioncontrol.jpg" />
+					<aside class="notes">But some people insist asking: (next slide)</aside>
+				</section>
+				<section>
+					<h4>What's wrong with not using version control?</h4>
+					<ul style="font-size:0.8em;list-style: none;text-align: center;">
+						<li class="fragment fade-in">It's not collaborative work-friendly.</li>
+						<li class="fragment fade-in">Hard to track changes on files.</li>
+						<li class="fragment fade-in">Keeping every version of a file will consume much more storage space.</li>
+					</ul>
+					<aside class="notes">an these are some reasons that you should for start using a VCS</aside>
+				</section>
+				<section>
+					<h4>What kind of VCS system exists?</h4>
+					<img style="border:0;box-shadow: 0 0 0;" class="fragment fade-in" src="img/version-control-models.jpg" />
+					<aside class="notes">Refer the other names used in the slides</aside>
+				</section>
+				<section>
+					<h4>Local Data Model
+						<span style="font-size:0.5em;">(aka File Locks)</span>
+					</h4>
+					<img src="img/localmodel.jpg" />
+					<ul style="font-size:0.6em;list-style: none;text-align: center;">
+						<li class="fragment fade-in">Require that everyone use the same filesystem</li>
+						<li class="fragment fade-in">Files will be locked when someone is using it, making the others wait to finish.</li>
+						<li class="fragment fade-in">Merging local copies of a file nees to be done manually.</li>
+					</ul>
+					<small class="fragment fade-in">Examples: RCS, SCCS</small>
+					<aside class="notes">reinforce the struggle with this system</aside>
+				</section>
+				<section>
+					<h4>Client-Server VCS
+						<span style="font-size:0.5em;">(aka Centralized VCS)</span>
+					</h4>
+					<img src="img/clientservermodel.jpg" />
+					<br />
+					<ul style="font-size:0.6em;list-style: none;text-align: center;">
+						<li class="fragment fade-in">Require a connection to the central repository</li>
+						<li class="fragment fade-in">Needs to solve merge conflicts before commit a file.</li>
+						<li class="fragment fade-in">Offline and remote development it's hard to manage</li>
+					</ul>
+					<small class="fragment fade-in">Examples: Subversion, CVS, TFS (proprietary)</small>
+					<aside class="notes">Talk about personal experience with subversion</aside>
+				</section>
+				<section>
+					<h4>Distributed VCS</h4>
+					<img src="img/distributedmodel.jpg" />
+					<ul style="font-size:0.6em;list-style: none;text-align: center;">
+						<li class="fragment fade-in">Does not require a central repository</li>
+						<li class="fragment fade-in">Commits to local repository and pushed/pulled to/from a remote repository</li>
+						<li class="fragment fade-in">Can be connected to multiple remote repositories.</li>
+						<li class="fragment fade-in">Offline and remote development friendly</li>
+					</ul>
+					<small class="fragment fade-in">Examples: Git, Mercurial, VSTS (proprietary)</small>
+					<aside class="notes">note that VSTS can also use git</aside>
+				</section>
+			</section>
+			<section>
+				<header>
+					<h3 style="color:red;">Git Hands On</h3>
+				</header>
+				<section>
+					<img style="border:0; box-shadow: 0 0 0;" src="img/gitlogo.png" />
+					<br />
+					<small class="fragment fade-in">Created by Linus Torsvalds.</small>
+					<small class="fragment fade-in">Inspired on Bit Keeper.</small>
+					<small class="fragment fade-in">Described as "the stupid content tracker"</small>
+					<aside class="notes">"goddamn idiotic truckload of sh*t": when it breaks</aside>
+				</section>
+				<section>
+					<h4>Git Commands</h4>
+					<div class="fragment fade-in">
+						<pre><code>$ git version</code></pre>
+						<small>Shows the git version installed</small>
+					</div>
+					<div class="fragment fade-in">
+						<pre><code>$ git config</code></pre>
+						<small>Get and set repository or global options</small>
+					</div>
+					<div class="fragment fade-in">
+						<pre><code>$ git init</code></pre>
+						<small>Create an empty Git repository or reinitialize an existing one</small>
+					</div>
+					<aside class="notes">
+						to check if git is installed run git version<br />
+						<br />
+						with git config is possible to set user name and email or default editor
+					</aside>
+				</section>
+				<section>
+					<h4>Git Commands</h4>
+					<div class="fragment fade-in">
+						<pre><code>$ git add</code></pre>
+						<small>Add file contents to the index</small>
+					</div>
+					<div class="fragment fade-in">
+						<pre><code>$ git status</code></pre>
+						<small>Show the working tree status</small>
+					</div>
+					<div class="fragment fade-in">
+						<pre><code>$ git commit</code></pre>
+						<small>Record changes to the repository</small>
+					</div>
+					<aside class="notes">
+						with git add the new files are automatically set as staged
+						<br/>
+						$ git add [filename]
+					</aside>
+				</section>
+				<section>
+					<h4>Worflow</h4>
+					<ul style="font-size:0.8em; list-style-image: url('img/cdown.png')">
+						<li class="fragment fade-in">Initialize a repository<pre><code>$ git init</code></pre></li>
+						<li>Edit your files</li>
+						<li class="fragment fade-in">Stage your changed files<pre class="fragment fade-in"><code>$ git add</code></pre></li>
+						<li class="fragment fade-in">Review your changes<pre class="fragment fade-in"><code>$ git status</code></pre></li>
+						<li>Save changes<pre class="fragment fade-in"><code>$ git commit</code></pre></li>
+					</ul>
+					<aside class="notes">ask what each command should be</aside>
+				</section>
+				<section>
+					<img style="border:0;box-shadow: 0 0 0;" src="img/filelifecycle.jpg" />
+					<aside class="notes">simulate lifecycle</aside>
+				</section>
+				<section>
+					<h4>Other Git Commands</h4>
+					<div class="fragment fade-in">
+						<pre><code>$ git log</code></pre>
+						<small>Show commit logs</small>
+					</div>
+					<div class="fragment fade-in">
+						<pre><code>$ git rm</code></pre>
+						<small>Remove files from the working tree and from the index</small>
+					</div>
+					<div class="fragment fade-in">
+						<pre><code>$ git diff</code></pre>
+						<small>Show changes between commits, commit and working tree, etc</small>
+					</div>
+					<aside class="notes">other important commands but not all
+						<br />					
+						$ git diff [COMMIT_ID] [menus/bean-burrito.txt]
+						<br />
+						$ git diff --staged # see the differences between the last commit and the current staging area
+					</aside>
+				</section>
+				<section>
+						<h4>Other Git Commands</h4>
+						<div class="fragment fade-in">
+							<pre><code>$ git checkout</code></pre>
+							<small>Restore working tree files</small>
+						</div>
+						<div class="fragment fade-in">
+							<pre><code>$ git clone</code></pre>
+							<small>Clone a repository into a new directory</small>
+						</div>
+						<div class="fragment fade-in">
+							<pre><code>$ git help</code></pre>
+							<small>If you need an explanation for this, then you are in the wrong room.</small>
+						</div>
+						<aside class="notes">
+							clone could also be done from a local repository
+							<br/>
+							$ git checkout [COMMIT_ID] [filename]	
+						</aside>
+				</section>
+				<section>
+                    <img src="img/gitignore.gif">
+					<div class="fragment fade-in">
+                            <pre>.gitignore</pre>
+                            <small>A file that contains the files of files to always ignore</small>
+					</div>
+					<aside class="notes">who's know what feature i will talk now</aside>
+				</section>
+				<section>
+					<h4>Working with remotes</h2>
+                    <img src="img/tvremote.jpg" />
+                    <aside class="notes">working with remotes, not this ones, this is super advanced for you to understand how it works</aside>
+                </section>
+                <section>
+                    <h4>Working with remotes</h2>
+                    <img src="img/gitremote.png" />
+                    <aside class="notes">but this ones instead<br /><br />reinforce collaborative feature and many remotes possibility</aside>
+                </section>
+				<section>
+						<h4>Remote Git Commands</h4>
+						<div class="fragment fade-in">
+							<pre><code>$ git remote</code></pre>
+							<small>Manage set of tracked repositories</small>
+						</div>
+						<div class="fragment fade-in">
+							<pre><code>$ git pull</code></pre>
+							<small>Fetch from and integrate with another repository or a local branch</small>
+						</div>
+						<div class="fragment fade-in">
+							<pre><code>$ git push</code></pre>
+							<small>Update remote refs along with associated objects</small>
+						</div>
+						<aside class="notes">$ git remote add [remote_name] [location] </aside>
+				</section>
+			</section>
+			<section>
+				<header>
+                    <h4>This subject will continue on another summarize...</h2>
+						<p class="fragment fade-in" class="color:red;">Bootcamp day 5 highlight</p>
+						<img class="fragment fade-in" src="img/highlightoftheday.gif" />
+						<pre class="fragment fade-in"><code>$ git commit -m "summarizer final"
+$ git push</code></pre>
+				</header>
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			multiplex: {
+				// Example values. To generate your own, see the socket.io server instructions.
+				secret: '1537054863842164000', // Obtained from the socket.io server. Gives this (the master) control of the presentation
+				id: 'b6ace366fc42c743', // Obtained from socket.io server
+				url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh' // Location of socket.io server
+			},
+
+			dependencies: [
+				{ src: 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js', async: true },
+				{ src: 'plugin/multiplex/master.js', async: true },
+
+				// and if you want speaker notes
+				//{ src: 'plugin/notes-server/client.js', async: true },
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				//{ src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(); } }
+
+			]
+		});
+	</script>
+</body>
+
+</html>
